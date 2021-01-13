@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    let options = [
+        {
+            "Conditions": null,
+            "Field": "name",
+            "Id": 1,
+            "Model": "企业基本信息",
+            "Msort": 1,
+            "Name": "企业名称",
+            "Sort": 1,
+            "Type": 1
+        },
+        {
+            "Conditions": "是;否;",
+            "Field": "business_abnormalities_flag",
+            "Id": 23,
+            "Model": "经营异常信息",
+            "Msort": 2,
+            "Name": "是否经营异常",
+            "Sort": 1,
+            "Type": 3,
+        },
+        {
+            "Conditions": " 是;否;",
+            "Field": "judicial_lawsuit_flag",
+            "Id": 34,
+            "Model": "司法信息",
+            "Msort": 3,
+            "Name": "有无法律诉讼",
+            "Sort": 1,
+            "Type": 3
+        },
+        {
+            "Conditions": "是;否;",
+            "Field": "has_patent",
+            "Id": 50,
+            "Model": "知识产权",
+            "Msort": 5,
+            "Name": "有无专利",
+            "Sort": 1,
+            "Type": 3
+        }
+    ];
+    let data = [
+        {
+            "Conditions": null,
+            "Field": "brief_intro",
+            "Id": 2,
+            "Model": "企业基本信息",
+            "Msort": 1,
+            "Name": "企业简介",
+            "Sort": 2,
+            "Type": 1
+        },
+        {
+            "Conditions": "存续;注销;吊销;撤销;迁出;设立中;清算;停业;",
+            "Field": "status",
+            "Id": 3,
+            "Model": "企业基本信息",
+            "Msort": 1,
+            "Name": "经营状态",
+            "Sort": 3,
+            "Type": 2
+        },
+        {
+            "Conditions": null,
+            "Field": "scope",
+            "Id": 5,
+            "Model": "企业基本信息",
+            "Msort": 1,
+            "Name": "经营范围",
+            "Sort": 4,
+            "Type": 1
+        },
+        {
+            "Conditions": null,
+            "Field": "city_name",
+            "Id": 6,
+            "Model": "企业基本信息",
+            "Msort": 1,
+            "Name": "企业所在地",
+            "Sort": 5,
+            "Type": 6
+        },
+        {
+            "Conditions": null,
+            "Field": "patent_request_cnt",
+            "Id": 53,
+            "Model": "知识产权",
+            "Msort": 5,
+            "Name": "申请专利总数",
+            "Sort": 4,
+            "Type": 5
+        },
+        {
+            "Conditions": null,
+            "Field": "patent_recent_1_y_request_cnt",
+            "Id": 54,
+            "Model": "知识产权",
+            "Msort": 5,
+            "Name": "最近一年申请专利总数",
+            "Sort": 5,
+            "Type": 5
+        }
+    ];
+    let control = [];
+    options.forEach(function(e) {
+        control.push({"name" : e.Model,"list":[]});
+    })
+    console.log(control)
+    control.forEach(function(e) {
+            data.forEach(function (item) {
+                if(e.name==item.Model){
+                    e.list.push(item);
+                }
+            })
+     })
+    console.log(JSON.stringify(control))
+</script>
+</body>
+</html>
